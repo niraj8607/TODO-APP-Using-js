@@ -15,6 +15,7 @@ btn.addEventListener("click", function(){
    input.value="";
 });
 
+//Event Delegation
 ul.addEventListener("click", function(event){
    if(event.target.nodeName == "BUTTON"){
       const listitem = event.target.parentElement;
