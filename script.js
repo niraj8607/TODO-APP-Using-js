@@ -6,16 +6,19 @@ btn.addEventListener("click", function(){
    const item = document.createElement("li");
    item.innerText = input.value;
 
-
    const delBtn = document.createElement("button");
-   delBtn.innerText = "Delete";
-   delBtn.classList.add("Delete");
-   
-   delBtn.addEventListener("click", function(){
-    item.remove();
-   });
+   delBtn.innerText = "delete";
+   delBtn.classList.add("delete");
+
    item.appendChild(delBtn);
    ul.appendChild(item);
-   input.value = "";
-   
+   input.value="";
+});
+
+ul.addEventListener("click", function(event){
+   if(event.target.nodeName == "BUTTON"){
+      const listitem = event.target.parentElement;
+      listitem.remove();
+      console.log("Deleted");
+   }
 })
